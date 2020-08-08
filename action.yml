@@ -1,0 +1,19 @@
+name: 'Latex CV Builder'
+author: 'Tajinder Singh'
+branding:
+  icon: 'file-plus'
+  color: 'orange'
+description: 'Automate your CV/resume.'
+inputs:
+  FILE_NAME:
+    description: 'Your latex document within your repository (Ex: cv.tex)'
+    required: true
+  LATEST_TAG:
+    description: ''
+    required: true
+outputs:
+  TAG_NAME:
+    description: 'The name of the tag created into your repository'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
