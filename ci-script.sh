@@ -56,6 +56,7 @@ main() {
 
 cleanLatest() {
   echo "====> CLEANING LATEST RELEASE <===="
+  rm *.log
   LATEST_RELEASE_ID=$(curl -s -X GET --url https://api.github.com/repos/$1/releases/tags/latest --header "authorization: token $2" | jq -r ".id")
   if [ ! -z "${LATEST_RELEASE_ID}" ]; then
     echo "-> DELETE latest tag"
